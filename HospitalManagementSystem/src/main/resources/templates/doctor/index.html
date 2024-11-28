@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Doctor Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="../doctor/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="../doctor/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="../doctor/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../doctor/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+	
+	  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../vendor/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Main CSS-->
+    <link href="../doctor/css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" th:href="@{/doctor/index}">
+                            <img src="../doctor/images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                           <a th:href="@{/doctor/index}" >
+                                <i  class="fas fa-table"></i>Appointments</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a th:href="@{/doctor/index}">
+                    <img src="../doctor/images/icon/logo.png" alt="Doctor+" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class="active">
+                     <a th:href="@{/doctor/index}" >
+                                <i  class="fas fa-table"></i>Appointments</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu"></div>
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="images/doc.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">  <p th:text="${name}" >Test</p></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/doc.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                         <p th:text="${user}" >Test</p>
+                                                    </h5>
+                                                    <span class="email">  <p th:text="${email}" /></span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <form  th:action="@{/logout}"  method="POST">
+	                                               <button type="submit" class="btn btn-successbtn btn-lg btn-success">Logout</button> 
+                                                </form>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <!-- <div class="row">
+                            <div class="col-md-3">
+                                <label for="date-range">Filter by Date</label>
+                                <select id="date-range" class="form-control">
+                                    <option value="3months">Last 3 months</option>
+                                    <option value="6months">Last 6 months</option>
+                                    <option value="1year">Last 1 year</option>
+                                </select>
+                            </div> -->
+					       <form action="#" th:action="@{/doctor/appointmenyByDate}" method="get" class="mb-4">
+					            <div class="form-group d-flex align-items-center">
+					                <h3 class="mr-2 ml-4" for="orderDate">Date:</h3>
+					                <input id="appomimentDate" name="appomimentDate" type="date" class="form-control mr-2" style="width: auto;" 
+					                       th:value="${appomimentDate != null ? appomimentDate : ''}" required>
+					                <button type="submit" class="btn btn-primary" style="margin-left:20px">Search</button>
+					                 <span style="margin-left:40px">Total  Appointments : <span th:text="${count}"></span></span>
+					            </div>
+					        </form>
+                        </div>
+
+                        <div class="row m-t-30">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE-->
+                                <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Appointment Date</th>
+                                                <th>Appointment Time</th>
+                                                <th>Description</th>
+                                                <th>Prescription</th>
+                                                <th>Diagnosis Date</th>
+                                                <th>Diagnosis Time</th>
+                                                <th>Status</th>
+                                                <th>Diagnosis Duration</th>
+                                                <th>Update</th>
+                                            </tr>
+                                        </thead>
+                                      <tbody>
+										    <tr th:each="temp : ${app}">
+										        <form th:action="@{/doctor/updateAppointment}" method="POST">
+										            <input type="hidden" th:name="id" th:value="${temp.id}" />
+										            <td th:text="${temp.id}"></td>
+										            <td th:text="${temp.name}"></td>
+										            <td th:text="${temp.email}"></td>
+										            <td th:text="${temp.AppointmentDate}"></td>
+										            <td th:text="${temp.AppointmentTime}"></td>
+										            <td th:text="${temp.description}"></td>
+										            <td>
+										                <textarea rows=2 type="text" th:name="prescription" th:text="${temp.Prescription}" class="form-control"></textarea>
+										            </td>
+										             <td>
+										                <input type="Date" th:name="diagnosisDate" th:value="${temp.diagnosisDate}" class="form-control"/>
+										            </td>
+										
+										            <td>
+										                <input type="time" th:name="diagnosisTime" th:value="${temp.diagnosisTime}" class="form-control"/>
+										            </td>
+										
+										            <td>
+										                <select class="form-control" th:name="status" style="width:140px">
+										                	 <option th:value="${temp.status}"></option>
+										                    <option value="completed" th:selected="${temp.status == 'completed'}">Completed</option>
+										                    <option value="no_show" th:selected="${temp.status == 'no_show'}">No Show</option>
+										                    <option value="pending" th:selected="${temp.status == 'pending'}">Pending</option>
+										                </select>
+										            </td>
+										            <td>
+										                <select class="form-control" th:name="diagnosisDuration" style="width:100px">
+										                	  <option value="0" th:selected="${temp.diagnosisDuration == null}">0 Mins</option>
+										                    <option value="30" th:selected="${temp.diagnosisDuration == 30}">30 Mins</option>
+										                    <option value="45" th:selected="${temp.diagnosisDuration == 45}">45 Mins</option>
+										                    <option value="60" th:selected="${temp.diagnosisDuration == 60}">1 Hour</option>
+										                </select>
+										            </td>
+										
+										            <!-- Submit Button -->
+										            <td>
+										                <button type="submit" class="btn btn-primary">Update</button>
+										            </td>
+										        </form>
+										    </tr>
+										</tbody>
+
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE-->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © Doctor+ Application. All rights reserved. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="../doctor/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="../doctor/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="../doctor/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="../doctor/vendor/slick/slick.min.js"></script>
+    <script src="../doctor/vendor/wow/wow.min.js"></script>
+    <script src="../doctor/vendor/animsition/animsition.min.js"></script>
+    <script src="../doctor/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="../doctor/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="../doctor/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="../doctor/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="../doctor/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../doctor/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../doctor/vendor/select2/select2.min.js"></script>
+
+    <!-- Main JS-->
+    <script src="../doctor/js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
